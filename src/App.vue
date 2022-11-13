@@ -3,10 +3,12 @@ import HomePage from './components/HomePage.vue'
 </script>
 
 <template>
-  <h1 class="scoper text-3xl font-bold underline">
-    This is the hompage in App.vue delete me later
-  </h1>
-  <HomePage msg="Vite + Vue" />
+  <div class="container mx-auto max-w-5xl">
+    <HomePage msg="Vite + Vue" />
+    <h1 class="scoper text-3xl font-bold underline">
+      This is the hompage in App.vue delete me later
+    </h1>
+  </div>
 </template>
 
 <style scoped>

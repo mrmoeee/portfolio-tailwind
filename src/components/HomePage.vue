@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import NavBar from './NavBar.vue';
+import NavBar from './NavBar.vue'
+import LandingPage from './LandingPage.vue'
 defineProps({
   msg: String
 })
@@ -10,6 +11,7 @@ const count = ref(0)
 
 <template>
   <NavBar />
+  <LandingPage />
   <div>This is in HomePage Component</div>
   <h1>{{ msg }}</h1>
 
