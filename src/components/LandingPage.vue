@@ -1,10 +1,18 @@
 <script setup>
-import LandingPageHeroVue from './LandingPageHero.vue';
-const msg1 = "landing page hero !!!!";
-
-
+const name = "Hello, my name's Matthew Moe and"
+const introHighlight = "I am a Software Developer"
+const introMsg = "Some sort of intro message here"
 </script>
 
 <template>
-  <LandingPageHeroVue :msg="msg1" />
+  <div class="flex flex-row justify-evenly max-w-5xl">
+    <div class="flex flex-col">
+      <p>{{ name }}</p>
+      <p>{{ introHighlight }}</p>
+      <p>{{ introMsg }}</p>
+    </div>
+    <div class="">
+      Somesort of catchy art piece
+    </div>
+  </div>
 </template>
