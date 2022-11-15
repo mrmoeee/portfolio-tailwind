@@ -6,12 +6,12 @@ const introMsg = "Some sort of intro message here"
 
 <template>
   <div class="flex flex-row justify-evenly max-w-5xl">
-    <div class="flex flex-col">
+    <div class="flex flex-col w-full items-center">
       <p>{{ name }}</p>
       <p>{{ introHighlight }}</p>
       <p>{{ introMsg }}</p>
     </div>
-    <div class="">
+    <div class="flex flex-col w-full items-center">
       Somesort of catchy art piece
     </div>
   </div>
