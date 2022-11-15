@@ -11,7 +11,6 @@ const count = ref(0)
 
 <template>
   <NavBar />
-  <div>This is in HomePage Component</div>
   <LandingPage />
   <!-- <h1>{{ msg }}</h1> remove later, just here to show props -->
 </template>
