@@ -29,7 +29,8 @@ const skills = [
 
 <template>
   <div class="flex flex-row max-w-5xl h-96 my-20">
-    <div class="w-full h-full grid grid-cols-1 content-evenly">
+    <div class="w-full h-full grid grid-cols-1 content-evenly justify-items-center">
+      <p>Skills</p>
       <ul class="grid grid-cols-2 gap-2 justify-items-center">
         <li v-for="skill in skills" :key="skill.language" class="flex">
           <p>{{ skill.image }}</p>
