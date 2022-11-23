@@ -48,15 +48,17 @@ const projects = [
 </script>
 
 <template>
-  <div>
+  <div class="text-center">
     <h1>Projects page</h1>
     <!-- 1 card for now, for loop later -->
     <!-- gonna have to put in ul, using a for loop to return li items that return this component -->
-    <ul class="grid grid-cols-2 gap-2">
-      <li v-for="project in projects" :key="project.id" class="w-4/5 h-48">
-        <ProjectsPageCardVue :project="project" />
-      </li>
-    </ul>
+    <div>
+      <ul class="grid grid-cols-3 gap-8">
+        <li v-for="project in projects" :key="project.id" class="flex justify-center">
+          <ProjectsPageCardVue :project="project" />
+        </li>
+      </ul>
+    </div>
 
   </div>
 </template>
