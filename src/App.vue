@@ -7,15 +7,12 @@ import ContactPage from './components/ContactPage.vue';
 </script>
 
 <template>
-  <div class="container mx-auto max-w-5xl">
+  <div class="container mx-auto max-w-5xl shadow-2xl shadow-slate-50 p-10">
     <HomePage />
     <AboutPage />
     <ProjectsPage />
     <ResumePage />
     <ContactPage />
-    <h1 class="scoper text-3xl font-bold underline">
-      This is the hompage in App.vue delete me later
-    </h1>
   </div>
 </template>
 
