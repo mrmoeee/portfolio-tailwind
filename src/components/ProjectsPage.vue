@@ -54,7 +54,7 @@ const projects = [
     <!-- gonna have to put in ul, using a for loop to return li items that return this component -->
     <div>
       <ul class="grid grid-cols-3 gap-8">
-        <li v-for="project in projects" :key="project.id" class="flex justify-center">
+        <li v-for="project in projects" :key="project.id" class="flex justify-center p-2">
           <ProjectsPageCardVue :project="project" />
         </li>
       </ul>
