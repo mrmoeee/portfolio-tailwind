@@ -3,6 +3,7 @@ import HomePage from './components/HomePage.vue'
 import AboutPage from './components/AboutPage.vue';
 import ProjectsPage from './components/ProjectsPage.vue';
 import ContactPage from './components/ContactPage.vue';
+import FooterSocials from './components/FooterSocials.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import ContactPage from './components/ContactPage.vue';
     <ProjectsPage />
     <ContactPage />
   </div>
+  <FooterSocials />
 </template>
 
 <style scoped>

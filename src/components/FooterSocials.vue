@@ -2,7 +2,7 @@
 </script>
 
 <template>
-
+  <p>Footer section</p>
 </template>
 
 <style scoped>
