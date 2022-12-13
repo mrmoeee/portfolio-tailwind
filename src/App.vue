@@ -2,7 +2,6 @@
 import HomePage from './components/HomePage.vue'
 import AboutPage from './components/AboutPage.vue';
 import ProjectsPage from './components/ProjectsPage.vue';
-import ResumePage from './components/ResumePage.vue';
 import ContactPage from './components/ContactPage.vue';
 </script>
 
@@ -11,7 +10,6 @@ import ContactPage from './components/ContactPage.vue';
     <HomePage />
     <AboutPage />
     <ProjectsPage />
-    <ResumePage />
     <ContactPage />
   </div>
 </template>

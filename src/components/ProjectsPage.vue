@@ -52,13 +52,19 @@ const projects = [
     <h1>Projects page</h1>
     <!-- 1 card for now, for loop later -->
     <!-- gonna have to put in ul, using a for loop to return li items that return this component -->
-    <div>
+    <div class="">
       <ul class="grid grid-cols-3 gap-8">
         <li v-for="project in projects" :key="project.id" class="flex justify-center p-2">
           <ProjectsPageCardVue :project="project" />
         </li>
       </ul>
     </div>
-
+    <div class="project-footer">
+      <a href="path_to_file" download="proposed_file_name">Click here to download my resume</a>
+    </div>
   </div>
 </template>
+
+<style scoped>
+
+</style>
