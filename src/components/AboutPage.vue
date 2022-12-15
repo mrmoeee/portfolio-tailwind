@@ -52,7 +52,7 @@ const skills = [
         </ul>
       </div>
       <div class="flex justify-center">
-        <button class="border border-2 border-black rounded w-3/4 p-2">
+        <button class="shadow-md rounded w-3/4 p-2">
           <a class="text-center text-center text-xl antialiased font-light tracking-widest" href="path_to_file"
             download="proposed_file_name">
             Download my resume
@@ -61,7 +61,6 @@ const skills = [
         </button>
       </div>
     </div>
-
     <div class="w-full h-full border-2 border-black">
       stuff about me, music, movies, how i keep uptodate with
     </div>
