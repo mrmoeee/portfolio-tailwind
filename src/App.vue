@@ -13,6 +13,7 @@ import FooterSocials from './components/FooterSocials.vue';
     <ProjectsPage />
     <ContactPage />
   </div>
+
   <FooterSocials />
 </template>
 

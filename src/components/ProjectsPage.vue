@@ -49,7 +49,7 @@ const projects = [
 
 <template>
   <div class="text-center">
-    <h1>Projects page</h1>
+    <p class="text-center mb-8 text-center text-2xl antialiased font-light tracking-widest">Projects page</p>
     <!-- 1 card for now, for loop later -->
     <!-- gonna have to put in ul, using a for loop to return li items that return this component -->
     <div class="">
@@ -58,9 +58,6 @@ const projects = [
           <ProjectsPageCardVue :project="project" />
         </li>
       </ul>
-    </div>
-    <div class="project-footer">
-      <a href="path_to_file" download="proposed_file_name">Click here to download my resume</a>
     </div>
   </div>
 </template>
