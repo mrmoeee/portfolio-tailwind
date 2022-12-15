@@ -1,5 +1,6 @@
 <script setup>
 const sendEmail = () => {
+  console.log('sending email')
   Email.send({
     Host: "smtp.elasticemail.com",
     Username: "username",
@@ -18,7 +19,7 @@ const sendEmail = () => {
   <p class="my-6 text-center text-2xl antialiased font-light tracking-widest">Contact Me</p>
   <div class="flex justify-center text-base antialiased font-light tracking-widest">
     <div class="w-5/12 border border-2 rounded p-4">
-      <form class="flex flex-col">
+      <form class="flex flex-col" @submit="sendEmail">
         <p class="p-2">Your Name</p>
         <input class="p-2 my-2 rounded" type="text" id="name" placeholder="Your Name" required>
         <p class="p-2">Email Address</p>

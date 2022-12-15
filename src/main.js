@@ -16,4 +16,4 @@ library.add(faUserSecret, faReact, faSquareJs, faHtml5, faCss3, faDownload)
 
 createApp(App)
   .component('font-awesome-icon', FontAwesomeIcon)
-  .mount('#app')
+  .mount('#app', document.getElementById("canvas"))
