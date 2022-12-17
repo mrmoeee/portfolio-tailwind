@@ -20,8 +20,8 @@ onMounted(() => {
     const ball = {
       x: 100,
       y: 100,
-      vx: 5,
-      vy: 2,
+      vx: 0.2,
+      vy: 0.5,
       radius: 25,
       color: "blue",
       // function to draw the object
@@ -32,17 +32,44 @@ onMounted(() => {
         ctx.fillStyle = this.color;
         ctx.fill()
       },
-    };
+
+      resetBall() {
+        this.x = 100;
+        this.y = 100;
+      }
+    }
+    // variables for stars
+    let stars = [];
+    // different layers for stars
+    let layers = [
+      { speed: 0.02, scale: 0.2, count: 150 },
+      { speed: 0.04, scale: 0.5, count: 50 },
+      { speed: 0.05, scale: 0.75, count: 20 },
+    ];
+    let starBaseRadius = 3;
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ball.draw();
       ball.x += ball.vx;
       ball.y += ball.vy;
+
+      if (ball.y + ball.vy > canvas.height || ball.y + ball.vy < 0) {
+        ball.resetBall();
+        console.log('reset! y');
+      }
+      if (ball.x + ball.xy > canvas.width || ball.x + ball.xy < 0) {
+        ball.resetBall();
+        console.log('reset! x');
+      }
+
+
+
+
       raf = window.requestAnimationFrame(draw);
     }
 
-    // window.requestAnimationFrame(draw);
+    window.requestAnimationFrame(draw);
 
     ball.draw();
 
