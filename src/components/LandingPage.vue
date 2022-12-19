@@ -29,10 +29,6 @@ onMounted(() => {
         let star = Object.create(this);
         star.x = x;
         star.y = y;
-        // set speed
-        // this.vx = this.setSpeed();
-        // this.vy = this.setSpeed();
-        // 
         return star;
       },
 
@@ -46,7 +42,9 @@ onMounted(() => {
       },
 
       setSpeed(speed) {
-
+        let randomSpeed = randomInt(3);
+        randomSpeed === 0 ? randomSpeed = 0.5 : randomSpeed;
+        return randomSpeed * speed;
       },
 
       update() {
@@ -55,30 +53,32 @@ onMounted(() => {
       },
 
       resetStar() {
-        this.x = 100;
-        this.y = 100;
+        this.x = randomInt(canvas.width);
+        this.y = randomInt(canvas.height);
       },
     }
     // variables for stars
     let stars = [];
     // different layers for stars
     let layers = [
-      { speed: 0.02, scale: 0.2, count: 500 },
-      { speed: 0.04, scale: 0.5, count: 75 },
-      { speed: 0.05, scale: 0.75, count: 30 },
+      { speed: 0.04, scale: 0.2, count: 500 },
+      { speed: 0.07, scale: 0.5, count: 75 },
+      { speed: 0.09, scale: 0.75, count: 30 },
     ];
     let starBaseRadius = 4;
 
     // creating the stars
     layers.forEach((layer) => {
       for (let i = 0; i < layer.count; i += 1) {
-        let starLayer = star.create(randomSpawn(canvas.width), randomSpawn(canvas.height))
+        let starLayer = star.create(randomInt(canvas.width), randomInt(canvas.height))
         starLayer.radius = starBaseRadius * layer.scale;
+        starLayer.vx = starLayer.setSpeed(layer.speed);
+        starLayer.vy = starLayer.setSpeed(layer.speed);
         stars.push(starLayer);
       }
     })
-    // function to randomize star spawn point
-    function randomSpawn(max) {
+    // function to randomize numbers
+    function randomInt(max) {
       return Math.floor(Math.random() * max);
     }
 
@@ -91,17 +91,16 @@ onMounted(() => {
       stars.forEach((star) => {
         star.draw();
         // update star here to move the star
+        star.update();
+        // boundary check for stars
+        if (star.y + star.vy > canvas.height || star.y + star.vy < 0) {
+          star.resetStar();
+        }
+        if (star.x + star.xy > canvas.width || star.x + star.xy < 0) {
+          star.resetStar();
+        }
       })
 
-      // boundary check for stars
-      if (star.y + star.vy > canvas.height || star.y + star.vy < 0) {
-        star.resetStar();
-        console.log('reset! y');
-      }
-      if (star.x + star.xy > canvas.width || star.x + star.xy < 0) {
-        star.resetStar();
-        console.log('reset! x');
-      }
 
       raf = window.requestAnimationFrame(draw);
     }
