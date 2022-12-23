@@ -1,9 +1,8 @@
 <script setup>
 import { onMounted, onUpdated } from 'vue';
 import initType from '../lib/typingIntro';
-const name = "Hello, my name's Matthew Moe"
-const introHighlight = "I am a Software Developer"
-const introMsg = "Some sort of intro message here"
+const name = "Hello my name is Matthew Moe and,"
+const introMsg = "I'll help you build. I'll help you develop. I'll help you create. "
 
 onMounted(() => {
   initType();
@@ -115,11 +114,15 @@ onMounted(() => {
 
 <template>
   <div class="flex flex-row justify-evenly max-w-5xl h-96 items-center my-20">
-    <div class="w-full h-full border-2 border-black">
-      <p class="">{{ name }}</p>
-      <p class="txt-type" data-wait="2000"
-        data-words='["a&nbsp;Software&nbsp;Developer", "a&nbsp;creator", "driven", "motivated"]'>temp span</p>
-      <p class="">{{ introMsg }}</p>
+    <div
+      class="grid grid-cols-1 gap-2 place-content-center w-full h-full text-xl antialiased font-light tracking-widest">
+      <p class="text-center text-base">{{ name }}</p>
+      <div class="flex flex-row text-xl">
+        <p class="mr-2">I am</p>
+        <p class="txt-type" data-wait="2000"
+          data-words='["a&nbsp;Software&nbsp;Developer.", "a&nbsp;creator.", "driven.", "motivated."]'></p>
+      </div>
+      <p class="text-base">{{ introMsg }}</p>
     </div>
     <div id="canvas-container" class="w-full h-full">
       <canvas class="rounded" id="canvas"></canvas>

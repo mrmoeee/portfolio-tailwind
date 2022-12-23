@@ -23,7 +23,28 @@ class Typer {
       this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
 
-    console.log(this.words, this.wait, this.txtElement);
+    // insert txt to html
+    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+    // how fast to type
+    let typeSpeed = 100;
+    // delete faster than typing
+    if (this.isDeleting) {
+      typeSpeed /= 2;
+    }
+
+    if(!this.isDeleting && this.txt === fullTxt) {
+      // pause before deleting
+      typeSpeed = this.wait;
+      // start deleting
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.wordIndex += 1;
+      typeSpeed = 200;
+    }
+
+    setTimeout(() => this.type(), typeSpeed);
   }
 }
 
