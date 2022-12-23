@@ -1,11 +1,12 @@
 <script setup>
 import { onMounted, onUpdated } from 'vue';
-
-const name = "Hello, my name's Matthew Moe and"
+import initType from '../lib/typingIntro';
+const name = "Hello, my name's Matthew Moe"
 const introHighlight = "I am a Software Developer"
 const introMsg = "Some sort of intro message here"
 
 onMounted(() => {
+  initType();
   const canvas = document.getElementById("canvas");
   let raf;
   canvas.style.width = "100%";
@@ -32,7 +33,7 @@ onMounted(() => {
         return star;
       },
 
-      // function to draw the object
+      // function to draw the star
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
@@ -40,7 +41,7 @@ onMounted(() => {
         ctx.fillStyle = this.color;
         ctx.fill()
       },
-
+      // randomize starspeed
       setSpeed(speed) {
         let randomSpeed = randomInt(3);
         randomSpeed === 0 ? randomSpeed = 0.5 : randomSpeed;
@@ -51,7 +52,7 @@ onMounted(() => {
         this.x += this.vx;
         this.y += this.vy;
       },
-
+      // reset star location
       resetStar() {
         this.x = randomInt(canvas.width);
         this.y = randomInt(canvas.height);
@@ -62,8 +63,8 @@ onMounted(() => {
     // different layers for stars
     let layers = [
       { speed: 0.04, scale: 0.2, count: 500 },
-      { speed: 0.07, scale: 0.5, count: 75 },
-      { speed: 0.09, scale: 0.75, count: 30 },
+      { speed: 0.07, scale: 0.4, count: 75 },
+      { speed: 0.09, scale: 0.6, count: 30 },
     ];
     let starBaseRadius = 4;
 
@@ -77,7 +78,7 @@ onMounted(() => {
         stars.push(starLayer);
       }
     })
-    // function to randomize numbers
+
     function randomInt(max) {
       return Math.floor(Math.random() * max);
     }
@@ -90,7 +91,6 @@ onMounted(() => {
       // draw stars
       stars.forEach((star) => {
         star.draw();
-        // update star here to move the star
         star.update();
         // boundary check for stars
         if (star.y + star.vy > canvas.height || star.y + star.vy < 0) {
@@ -107,7 +107,7 @@ onMounted(() => {
 
     window.requestAnimationFrame(draw);
   } else {
-    // canvas-unsupported code here (image or art piece)
+    // canvas-unsupported code here (image)
   }
 
 })
@@ -117,7 +117,8 @@ onMounted(() => {
   <div class="flex flex-row justify-evenly max-w-5xl h-96 items-center my-20">
     <div class="w-full h-full border-2 border-black">
       <p class="">{{ name }}</p>
-      <p class="">{{ introHighlight }}</p>
+      <p class="txt-type" data-wait="2000"
+        data-words='["a&nbsp;Software&nbsp;Developer", "a&nbsp;creator", "driven", "motivated"]'>temp span</p>
       <p class="">{{ introMsg }}</p>
     </div>
     <div id="canvas-container" class="w-full h-full">
