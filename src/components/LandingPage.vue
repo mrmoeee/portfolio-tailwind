@@ -123,9 +123,10 @@ onMounted(() => {
           data-words='["a&nbsp;Software&nbsp;Developer.", "a&nbsp;creator.", "driven.", "motivated."]'></p>
       </div>
       <p class="text-base">{{ introMsg }}</p>
+      <a>Connect with me on LinkdIn -> </a>
     </div>
     <div id="canvas-container" class="w-full h-full">
-      <canvas class="rounded" id="canvas"></canvas>
+      <canvas class="rounded shadow-2xl opacity-90" id="canvas"></canvas>
     </div>
   </div>
 </template>
